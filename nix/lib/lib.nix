@@ -198,6 +198,10 @@ in rec {
   ];
 
   # The OCI registry we are pushing to
-  registry = "ghcr.io/allthatjazzleo";
-
+  registry = "ghcr.io/allthatjazzleo/nix-std-oci";
+  
+  labels = {
+    # The OCI registry we are pushing to
+    org.opencontainers.image.source=https://github.com/allthatjazzleo/nix-std-oci
+  };
 }

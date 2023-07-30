@@ -16,7 +16,8 @@ in {
   in
     std.lib.ops.mkStandardOCI ({
         inherit operable;
-        name = "${lib.registry}/nix-std-oci";
+        inherit (lib) labels;
+        name = "${lib.registry}";
         debug = true;
       }
       # Include common container setup
