@@ -18,7 +18,6 @@ in {
         inherit operable;
         inherit (lib) labels;
         name = "${lib.registry}";
-        debug = true;
       }
       # Include common container setup
       // lib.containerCommon

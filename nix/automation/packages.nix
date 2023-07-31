@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixpkgs;
+  inherit (inputs) nixpkgs n2c;
 in {
-  hello = nixpkgs.hello;
+  hello = nixpkgs.aarch64-linux.hello;
 }

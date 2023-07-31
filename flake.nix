@@ -3,16 +3,16 @@
 
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    devshell = {
-      url = "github:numtide/devshell";
+
+    n2c = {
+      url = "github:nlewo/nix2container";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
+    };    
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     std = {
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.n2c.follows = "n2c";
       url = "github:divnix/std";
-      inputs.devshell.follows = "devshell";
-      inputs.nixago.follows = "nixago";
     };
   };
 

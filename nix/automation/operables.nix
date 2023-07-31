@@ -7,12 +7,12 @@
   l = nixpkgs.lib // builtins;
 
   package = cell.packages.hello;
+  runtimeShell = nixpkgs.aarch64-linux.bash;
 in {
   hello = std.lib.ops.mkOperable {
-    inherit package;
-    debugInputs = lib.containerCommonDebug;
+    inherit package runtimeShell;
     runtimeInputs = with nixpkgs; [
-      busybox # Includes nslookup
+      aarch64-linux.coreutils # Includes nslookup
     ];
     runtimeScript = ''
       echo ">>> Entering entrypoint script..."
